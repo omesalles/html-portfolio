@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="layout.css" />
+    <link rel="stylesheet" href="panel.css" />
+    <link rel="stylesheet" href="popupform.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
+      function myFunction(theOrigin) {
+        var menu = document.getElementById("myTopnav");
+        var icon = document.getElementById("icon");
+        if (menu.className === "nav-options") {
+          menu.className += " responsive";
+        } else {
+          menu.className = "nav-options";
+        }
+        if (theOrigin === "icon") {
+          icon.className = "hide-icon";
+        } else {
+          icon.className = "icon";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <!--<header class="header-center">
+        <div class="logo-nav">
+          <div class="nav-options" id="myTopnav">-->
+      <header class="header-center">
+        <div class="nav-options" id="myTopnav">
+          <a class="option active" href="#top" onclick="myFunction('')"
+            >Welcome</a
+          ><a class="option" href="#HTML" onclick="myFunction('')">HTML</a
+          ><a class="option" href="#CSS" onclick="myFunction('')">CSS</a
+          ><a class="option" href="#JavaScript" onclick="myFunction('')"
+            >JavaScript</a
+          ><a class="option" href="#ModernWebDev" onclick="myFunction('')"
+            >ModernWebDev</a
+          ><a class="option" href="#Tools" onclick="myFunction('')">Tools</a
+          ><a class="option" href="#Resources" onclick="myFunction('')"
+            >Resources</a
+          >
+          <a
+            href="javascript:void(0);"
+            id="icon"
+            class="icon"
+            onclick="myFunction('icon')"
+          >
+            <i class="fa fa-bars"></i>
+          </a>
+        </div>
+        <!--</div>-->
+      </header>
+      <main>
+        <nav class="context-menu">
+          <span class="paragraph-content"></span>
+          <h3>Section Index</h3>
+          <a href="#Background"><p>Background</p></a
+          ><a href="#About This Site"><p>About This Site</p></a
+          ><a href="#Challenges"><p>Challenges</p></a
+          ><a href="#The Course"><p>The Course</p></a
+          ><a href="#The Lecturers"><p>The Lecturers</p></a>
+        </nav>
+        <div class="page-content">
+          <span id="top"></span>
+          <h1>Welcome</h1>
+          <div>
+            <span class="paragraph-content-position" id="Background"></span>
+            <h2 class="title-paragraph">Background</h2>
+            <section>
+              <p class="paragraph-content">
+                This site was created after attending a front-end development
+                course and contains:<br />
+                <li>A summary of key concepts I learnt there.</li>
+                <li>
+                  Links to resources to support further learning and tools to
+                  help in developing projects.
+                </li>
+                The site is also a demonstration of some web-development
+                techniques I practiced in the course.As all learning and most
+                projects, it will continuously evolve, so it's not yet in its
+                final form.
+              </p>
+            </section>
+          </div>
+          <div>
+            <span
+              class="paragraph-content-position"
+              id="About This Site"
+            ></span>
+            <h2 class="title-paragraph">About This Site</h2>
+            <section>
+              <p class="paragraph-content">
+                This site is a single page application developed using React.
+                Each of the top menu option opens a new page, thanks to
+                React-Router library, which is in fact a React component. These
+                React components are all derived from a single one: a Panel
+                component that displays the left and right menus, and the page
+                content.<br />The contents in the page are laid out using a CSS
+                Flex Box, with a header, a content page and footer. The content
+                page is then split into sections also using CSS Flex Box and the
+                right and left menu are position on each side.<br />The most
+                distinctive characteristic of the site, apart from its black and
+                white design, is its responsive design. The layout of the page
+                adapts to three screen-sizes: screens greater than 798px, than
+                328px and smaller screens. This responsive behaviour is mostly
+                achieved using media queries in the style sheet definition.
+                However, I have used React to enhance this responsive behaviour
+                in two ways:<br />
+                <li>
+                  When the right menu disapears thanks to the styling, I add it
+                  as another item on the left menu.
+                </li>
+                <li>
+                  When the screen decreases to that of an old mobile phone
+                  (328px), the whole content is transformed into an accordion
+                  control, to facilitate the user navigation.
+                </li>
+              </p>
+            </section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="Challenges"></span>
+            <h2 class="title-paragraph">Challenges</h2>
+            <section>
+              <p class="paragraph-content">
+                The main challenge, which is not fully resolved in this site, is
+                the layout of the content. The sentences you are reading are
+                plain text with minimal HTML formatting. This is because the
+                content comes from the JSX program that create the pages, and in
+                there I can't format it. There's the solution to use the
+                dangerouslySetInnerHTML React tab, which is used here. In fact
+                there are markdown tools that facilitate editing this kind of
+                variables within a JavaScript program, for instance
+                <a href="https://mdxjs.com/">mdx</a>, but I havent't used it.
+                <br />
+                Another challenge is the presentation of links in the Mobile
+                version. The links in the Resources section should be done with
+                the HashLink React component, so they take you to the right
+                paragraph in the Resource page.<br />
+                A third challenge is the alignment of the right, middle and left
+                headings. This is because the left and right are fixed in the
+                screen, but the content moves with the page scroll. A possible
+                solution could be to add a scroll vertical bar to the content
+                page, instead of relying on the page scroll.
+              </p>
+            </section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="The Course"></span>
+            <h2 class="title-paragraph">The Course</h2>
+            <section>
+              <p class="paragraph-content">Info about the course</p>
+            </section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="The Lecturers"></span>
+            <h2 class="title-paragraph">The Lecturers</h2>
+            <section>
+              <p class="paragraph-content">Info about the lecturers</p>
+            </section>
+          </div>
+          <br /><br />
+        </div>
+        <aside class="aside-menu"></aside>
+      </main>
+      <main>
+        <nav class="context-menu">
+          <span class="paragraph-content"></span>
+          <h3>Section Index</h3>
+          <a href="#The box model"><p>The box model</p></a
+          ><a href="#div and span"><p>div and span</p></a
+          ><a href="#HTML DOM"><p>HTML DOM</p></a>
+        </nav>
+        <div class="page-content">
+          <span id="HTML"></span>
+          <h1>HTML</h1>
+          <div>
+            <span class="paragraph-content-position" id="The box model"></span>
+            <h2 class="title-paragraph">The box model</h2>
+            <section>
+              <p class="paragraph-content">
+                All elements are boxes. Every element on this web page is
+                treated as a box — imagine an invisible boundary around each
+                element. These boxes naturally sit next to each other orstack on
+                top of each other, depending on their properties.
+              </p>
+            </section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="div and span"></span>
+            <h2 class="title-paragraph">div and span</h2>
+            <section>
+              <p class="paragraph-content">
+                The
+                <span>
+                  tag is an inline containerused to mark up a part of a text, or
+                  a part of a document. The
+                  <span>
+                    tag is much like the
+                    <div>
+                      element, but
+                      <div>
+                        is a block-level element and
+                        <span> is an inline element.</span>
+                      </div>
+                    </div></span
+                  ></span
+                >
+              </p>
+            </section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="HTML DOM"></span>
+            <h2 class="title-paragraph">HTML DOM</h2>
+            <section>
+              <p class="paragraph-content">
+                The
+                <a href="https://www.w3schools.com/js/js_htmldom.asp"
+                  >HTML DOM</a
+                >, JavaScript can access and change all the elements of an HTML
+                document.
+              </p>
+            </section>
+          </div>
+        </div>
+        <aside class="aside-menu">
+          <span class="paragraph-content"></span>
+          <h3>Resources</h3>
+          <a href="#W3Schools"><p>W3Schools</p></a
+          ><a href="#WebFlow"><p>WebFlow</p></a>
+        </aside>
+      </main>
+      <main>
+        <nav class="context-menu">
+          <span class="paragraph-content"></span>
+          <h3>Section Index</h3>
+          <a href="#Box model"><p>Box model</p></a
+          ><a href="#Flex"><p>Flex</p></a><a href="#Grid"><p>Grid</p></a
+          ><a href="#Animations"><p>Animations</p></a
+          ><a href="#!important"><p>!important</p></a
+          ><a href="#Basic design rules"><p>Basic design rules</p></a
+          ><a href="#The Holy Grail"><p>The Holy Grail</p></a
+          ><a href="#CSS Specificity"><p>CSS Specificity</p></a>
+        </nav>
+        <div class="page-content">
+          <span id="CSS"></span>
+          <h1>CSS</h1>
+          <div>
+            <span class="paragraph-content-position" id="Box model"></span>
+            <h2 class="title-paragraph">Box model</h2>
+            <section><p class="paragraph-content">Box model</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="Flex"></span>
+            <h2 class="title-paragraph">Flex</h2>
+            <section><p class="paragraph-content">Flex</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="Grid"></span>
+            <h2 class="title-paragraph">Grid</h2>
+            <section><p class="paragraph-content">Grid</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="Animations"></span>
+            <h2 class="title-paragraph">Animations</h2>
+            <section><p class="paragraph-content">Animations</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="!important"></span>
+            <h2 class="title-paragraph">!important</h2>
+            <section>
+              <p class="paragraph-content">
+                The !important rule can be added to any style property and
+                overrides ALL previous styling rules for that specific property
+              </p>
+            </section>
+          </div>
+          <div>
+            <span
+              class="paragraph-content-position"
+              id="Basic design rules"
+            ></span>
+            <h2 class="title-paragraph">Basic design rules</h2>
+            <section>
+              <p class="paragraph-content">
+                The website
+                <a href="http://bettermotherfuckingwebsite.com/"
+                  >http://bettermotherfuckingwebsite.com/</a
+                >
+                provides some basic rules to help improve your website
+                appearance
+              </p>
+            </section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="The Holy Grail"></span>
+            <h2 class="title-paragraph">The Holy Grail</h2>
+            <section>
+              <p class="paragraph-content">
+                <a href="https://philipwalton.github.io/solved-by-flexbox/"
+                  >Solved by Flexbox</a
+                >
+                contains examples of using FlexBox to layout content
+              </p>
+            </section>
+          </div>
+          <div>
+            <span
+              class="paragraph-content-position"
+              id="CSS Specificity"
+            ></span>
+            <h2 class="title-paragraph">CSS Specificity</h2>
+            <section>
+              <p class="paragraph-content">
+                If an element is targeted by multiple selectors, browser use the
+                specificity of the selector to determine which styling to apply.
+                The specificity is split up in different levels. A single value
+                in a higher level is more important than all levels below it.<br />The
+                following rules apply:
+                <li>The universal selector * has no specificity.</li>
+                <li>
+                  properties with !important are applied even if the selector is
+                  less specific.
+                </li>
+                <li>
+                  …Except for the properties with !important in same or a higher
+                  specificity selectors later in your CSS.
+                </li>
+                <li>…Except for the style='' attribute on an element.</li>
+                <li>
+                  If you use a pseudo class like :not() or :is(), the selector
+                  inside it with the highest specificity determines the
+                  specificity.
+                </li>
+                <li>Anything in a :where() has no specificity.</li>
+                <li>
+                  For :nth-child() and :nth-last-child() pseudo-classes the
+                  specificity is the combination of the pseudo-class itself
+                  (0,1,0) plus the most specific of the selectors in them.
+                </li>
+                <li>
+                  Child or sibling selectors (&gt;, ~, +) add no specificity.
+                </li>
+              </p>
+            </section>
+          </div>
+          <br /><br />
+        </div>
+        <aside class="aside-menu">
+          <span class="paragraph-content"></span>
+          <h3>Resources</h3>
+          <a href="#W3Schools"><p>W3Schools</p></a
+          ><a href="#A Complete Guide to Flexbox"
+            ><p>A Complete Guide to Flexbox</p></a
+          >
+        </aside>
+      </main>
+      <main>
+        <nav class="context-menu">
+          <span class="paragraph-content"></span>
+          <h3>Section Index</h3>
+          <a href="#The Spread Operator"><p>The Spread Operator</p></a
+          ><a href="#Arrays and Objects"><p>Arrays and Objects</p></a>
+        </nav>
+        <div class="page-content">
+          <span id="JavaScript"></span>
+          <h1>JavaScript</h1>
+          <div>
+            <span
+              class="paragraph-content-position"
+              id="The Spread Operator"
+            ></span>
+            <h2 class="title-paragraph">The Spread Operator</h2>
+            <section>
+              <p class="paragraph-content">
+                This operator allows copying arrays and objects with a small
+                number of commands. The
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax"
+                  >MDN</a
+                >
+                website has a place where you can check the results of your
+                code. <br />If you are looking for a deep
+              </p>
+            </section>
+          </div>
+          <div>
+            <span
+              class="paragraph-content-position"
+              id="Arrays and Objects"
+            ></span>
+            <h2 class="title-paragraph">Arrays and Objects</h2>
+            <section>
+              <p class="paragraph-content">
+                JavaScript arrays and Objects are all over JS, W3Schools is a
+                good reference for
+                <a href="https://www.w3schools.com/js/js_arrays.asp">arrays</a>
+                and
+                <a href="https://www.w3schools.com/js/js_objects.asp">Objects</a
+                >.<br />The built in
+                <a href="https://www.w3schools.com/jsref/jsref_keys.asp"
+                  >Object.keys() Method</a
+                >
+                is useful for iterating through arrays.
+              </p>
+            </section>
+          </div>
+          <div>
+            <span class="paragraph-content-position"></span>
+            <h2 class="title-paragraph"></h2>
+            <section><p class="paragraph-content"></p></section>
+          </div>
+          <br /><br />
+        </div>
+        <aside class="aside-menu">
+          <span class="paragraph-content"></span>
+          <h3>Resources</h3>
+          <a href="#W3Schools"><p>W3Schools</p></a
+          ><a href="#JavaScript - The Good Parts"
+            ><p>JavaScript - The Good Parts</p></a
+          ><a href="#node.js"><p>node.js</p></a>
+        </aside>
+      </main>
+      <main>
+        <nav class="context-menu">
+          <span class="paragraph-content"></span>
+          <h3>Section Index</h3>
+          <a href="#React"><p>React</p></a
+          ><a href="#React Router"><p>React Router</p></a
+          ><a href="#Redux"><p>Redux</p></a><a href="#REST"><p>REST</p></a>
+        </nav>
+        <div class="page-content">
+          <span id="ModernWebDev"></span>
+          <h1>Modern Web Development</h1>
+          <div>
+            <span class="paragraph-content-position" id="React"></span>
+            <h2 class="title-paragraph">React</h2>
+            <section><p class="paragraph-content">one</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="React Router"></span>
+            <h2 class="title-paragraph">React Router</h2>
+            <section><p class="paragraph-content">two</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="Redux"></span>
+            <h2 class="title-paragraph">Redux</h2>
+            <section><p class="paragraph-content">three</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="REST"></span>
+            <h2 class="title-paragraph">REST</h2>
+            <section><p class="paragraph-content">four</p></section>
+          </div>
+          <br /><br />
+        </div>
+        <aside class="aside-menu">
+          <span class="paragraph-content"></span>
+          <h3>Resources</h3>
+          <a href="#immutable"><p>immutable</p></a
+          ><a href="#prebuild components"><p>prebuild components</p></a
+          ><a href="#Reselect library"><p>Reselect library</p></a>
+        </aside>
+      </main>
+      <main>
+        <nav class="context-menu">
+          <span class="paragraph-content"></span>
+          <h3>Section Index</h3>
+          <a href="#Visual Studio code"><p>Visual Studio code</p></a
+          ><a href="#node"><p>node</p></a><a href="#Github"><p>Github</p></a
+          ><a href="#ESlint"><p>ESlint</p></a
+          ><a href="#CodeSandbox"><p>CodeSandbox</p></a>
+        </nav>
+        <div class="page-content">
+          <span id="Tools"></span>
+          <h1>Tools</h1>
+          <div>
+            <span
+              class="paragraph-content-position"
+              id="Visual Studio code"
+            ></span>
+            <h2 class="title-paragraph">Visual Studio code</h2>
+            <section><p class="paragraph-content">...</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="node"></span>
+            <h2 class="title-paragraph">node</h2>
+            <section><p class="paragraph-content">...</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="Github"></span>
+            <h2 class="title-paragraph">Github</h2>
+            <section><p class="paragraph-content">...</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="ESlint"></span>
+            <h2 class="title-paragraph">ESlint</h2>
+            <section><p class="paragraph-content">...</p></section>
+          </div>
+          <div>
+            <span class="paragraph-content-position" id="CodeSandbox"></span>
+            <h2 class="title-paragraph">CodeSandbox</h2>
+            <section><p class="paragraph-content">...</p></section>
+          </div>
+          <br /><br />
+        </div>
+        <aside class="aside-menu"></aside>
+      </main>
+      <article class="resources">
+        <main>
+          <nav class="context-menu">
+            <span class="paragraph-content"></span>
+            <h3>Section Index</h3>
+            <a href="#W3Schools"><p>W3Schools</p></a
+            ><a href="#MDN Web Docs"><p>MDN Web Docs</p></a
+            ><a href="#CSS Zen Garden"><p>CSS Zen Garden</p></a
+            ><a href="#Redux"><p>Redux</p></a
+            ><a href="#Redux Core Concepts"><p>Redux Core Concepts</p></a
+            ><a href="#immutable"><p>immutable</p></a
+            ><a href="#JavaScript - The Good Parts"
+              ><p>JavaScript - The Good Parts</p></a
+            ><a href="#WebFlow"><p>WebFlow</p></a
+            ><a href="#A Complete Guide to Flexbox"
+              ><p>A Complete Guide to Flexbox</p></a
+            ><a href="#The CSS battle"><p>The CSS battle</p></a
+            ><a href="#Yarn and npm"><p>Yarn and npm</p></a
+            ><a href="#node.js"><p>node.js</p></a
+            ><a href="#Material Design"><p>Material Design</p></a
+            ><a href="#Agile"><p>Agile</p></a
+            ><a href="#Flexbox practice"><p>Flexbox practice</p></a
+            ><a href="#CSS cheatsheet"><p>CSS cheatsheet</p></a
+            ><a href="#HTML-cheatsheet"><p>HTML-cheatsheet</p></a
+            ><a href="#CSS Specificity"><p>CSS Specificity</p></a
+            ><a href="#Reselect library"><p>Reselect library</p></a>
+          </nav>
+          <div class="page-content">
+            <span id="Resources"></span>
+            <h1>Resources</h1>
+            <div>
+              <span class="paragraph-content-position" id="W3Schools"></span>
+              <h2 class="title-paragraph">W3Schools</h2>
+              <section>
+                <p class="paragraph-content">
+                  This <a href="https://www.w3schools.com/html/">website</a> is
+                  the starting point for anything related with web development
+                  comprehensive documenatation for HTML, CSS and JavaScript, and
+                  information about many tools relatedto web development and
+                  programming in general. The section
+                  <a href="https://www.w3schools.com/howto/default.asp"
+                    >How To</a
+                  >
+                  is full of ideas how to create common web functionalities
+                </p>
+              </section>
+            </div>
+            <div>
+              <span class="paragraph-content-position" id="MDN Web Docs"></span>
+              <h2 class="title-paragraph">MDN Web Docs</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/"
+                    >MDN docs</a
+                  >
+                  is the technical reference for many things related to web
+                  development
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="CSS Zen Garden"
+              ></span>
+              <h2 class="title-paragraph">CSS Zen Garden</h2>
+              <section>
+                <p class="paragraph-content">
+                  A <a href="http://www.csszengarden.com/">demonstration</a> of
+                  what can be accomplished through CSS-based design. Check how
+                  the style sheet completely transforms a webpage. The layouts
+                  can be a bit obscure and not easy to transfer to your own
+                  design.
+                </p>
+              </section>
+            </div>
+            <div>
+              <span class="paragraph-content-position" id="Redux"></span>
+              <h2 class="title-paragraph">Redux</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="https://redux.js.org/introduction/getting-started"
+                    >Redux</a
+                  >
+                  is a JavaScript library that allows you to share information
+                  between different parts of your web application ensuring
+                  consistent information in the various parts and taking care of
+                  the rendering
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="Redux Core Concepts"
+              ></span>
+              <h2 class="title-paragraph">Redux Core Concepts</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="https://redux.js.org/introduction/core-concepts"
+                    >Core Concepts | Redux</a
+                  >
+                </p>
+              </section>
+            </div>
+            <div>
+              <span class="paragraph-content-position" id="immutable"></span>
+              <h2 class="title-paragraph">immutable</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="https://immutable-js.com/">Library</a> for copying
+                  objects in JavaScript, respecting its immutability
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="JavaScript - The Good Parts"
+              ></span>
+              <h2 class="title-paragraph">JavaScript - The Good Parts</h2>
+              <section>
+                <p class="paragraph-content">
+                  A 172 pages practical
+                  <a
+                    href="https://media.oiipdf.com/pdf/ceabcdca-01c2-4f97-95dd-a577f08b9169.pdf"
+                  >
+                    book</a
+                  >
+                  for those learning JavaScript that focuses on the parts of the
+                  JavaScript language that will make you more a better
+                  programmer
+                </p>
+              </section>
+            </div>
+            <div>
+              <span class="paragraph-content-position" id="WebFlow"></span>
+              <h2 class="title-paragraph">WebFlow</h2>
+              <section>
+                <p class="paragraph-content">
+                  Webflow is a SaaS application that allows building websites
+                  using visual editing software.
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="A Complete Guide to Flexbox"
+              ></span>
+              <h2 class="title-paragraph">A Complete Guide to Flexbox</h2>
+              <section>
+                <p class="paragraph-content">
+                  This
+                  <a
+                    href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+                    >page</a
+                  >
+                  explanations about Flex Box are very graphical and easy to
+                  follow.
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="The CSS battle"
+              ></span>
+              <h2 class="title-paragraph">The CSS battle</h2>
+              <section>
+                <p class="paragraph-content">
+                  This <a href="https://cssbattle.dev/play/1">page</a> proposes
+                  you to small CSS challenges.
+                </p>
+              </section>
+            </div>
+            <div>
+              <span class="paragraph-content-position" id="Yarn and npm"></span>
+              <h2 class="title-paragraph">Yarn and npm</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="https://yarnpkg.com/getting-started">Yarn</a> and
+                  <a href="https://docs.npmjs.com/about-npm">npm</a> are package
+                  managers. They allow you to add pre-build packages to your web
+                  applications. npm is also a registry of many useful JavaScript
+                  packages.
+                </p>
+              </section>
+            </div>
+            <div>
+              <span class="paragraph-content-position" id="node.js"></span>
+              <h2 class="title-paragraph">node.js</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="https://nodejs.org/en/">Node.js</a> is a back-end
+                  JavaScript runtime environment that executes JavaScript code
+                  outside a web browser. Node.js lets developers use JavaScript
+                  to write command line tools and for server-side
+                  scripting—running scripts server-side to produce dynamic web
+                  page content before the page is sent to the user's web
+                  browser.
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="Material Design"
+              ></span>
+              <h2 class="title-paragraph">Material Design</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="https://material.io/design">Material Design</a> is a
+                  design language developed by Google based on principles of
+                  good design. Even without learning the language, one cas
+                  extrapolate the good design practices into web apps.
+                </p>
+              </section>
+            </div>
+            <div>
+              <span class="paragraph-content-position" id="Agile"></span>
+              <h2 class="title-paragraph">Agile</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a
+                    href="https://www2.deloitte.com/es/es/pages/technology/articles/conoce-todo-sobre-scrum.html"
+                    >Agile technicques</a
+                  >
+                  for project management are very common in software development
+                  and certainly in web development. Have a look at this
+                  <a href="https://www.scrum.org/">website</a>.
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="Flexbox practice"
+              ></span>
+              <h2 class="title-paragraph">Flexbox practice</h2>
+              <section>
+                <p class="paragraph-content">
+                  Have fun learning about flexbox in
+                  <a href="https://flexboxfroggy.com/#ca">this webpage</a>
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="CSS cheatsheet"
+              ></span>
+              <h2 class="title-paragraph">CSS cheatsheet</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="CSS.pdf">Here</a>
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="HTML-cheatsheet"
+              ></span>
+              <h2 class="title-paragraph">HTML-cheatsheet</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="HTML-CheatSheet.pdf">Here</a>
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="CSS Specificity"
+              ></span>
+              <h2 class="title-paragraph">CSS Specificity</h2>
+              <section>
+                <p class="paragraph-content">
+                  <a href="https://polypane.app/css-specificity-calculator/"
+                    >CSS Specificity</a
+                  >
+                  refers to which CSS styles will take preference when there are
+                  multiple definitions for the same class/tag/id. If you write
+                  your CSS files with Visual Studio Code you can see the result
+                  of the specificity calculator when hovering on the class
+                  definition.
+                </p>
+              </section>
+            </div>
+            <div>
+              <span
+                class="paragraph-content-position"
+                id="Reselect library"
+              ></span>
+              <h2 class="title-paragraph">Reselect library</h2>
+              <section>
+                <p class="paragraph-content">
+                  A
+                  <a href="https://github.com/reduxjs/reselect">library</a> for
+                  creating memoized 'selector' functions. Commonly used with
+                  Redux, but usable with any plain JS immutable data as well.
+                </p>
+              </section>
+            </div>
+            <br /><br />
+          </div>
+          <aside class="aside-menu"></aside>
+        </main>
+      </article>
+      <footer>
+        <img
+          src="../final-portfolio/src/assets/technocampus.svg"
+          class="tecnocampus-img"
+        />
+        <div class="soc">Servei Públic d'Ocupació de Catalunya</div>
+        <button class="open-button" onclick="openForm()">Contact Me</button>
+        <div class="form-popup" id="myForm">
+          <form
+            action="https://formcarry.com/s/ITNanLeCu0j"
+            class="form-container"
+            target="_blank"
+            method="POST"
+            accept-charset="UTF-8"
+          >
+            <input
+              type="text"
+              placeholder="Enter Email"
+              name="email"
+              required=""
+            /><input
+              type="text"
+              placeholder="Enter your name"
+              name="name"
+            /><textarea
+              name="txtMessage"
+              rows="4"
+              placeholder="Add your message"
+            ></textarea
+            ><button type="submit" class="btn">Send me a message</button
+            ><button type="button" class="btn cancel" onclick="closeForm()">
+              Close
+            </button>
+          </form>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+main {
+  position: sticky;
+  margin-top: var(--header-footer-size);
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  height: auto;
+}
+
+.context-menu {
+  position: sticky;
+  top: var(--header-footer-size);
+  left: 0;
+  width: var(--left-menu-size);
+  /*height: calc(100% - 2 * var(--header-footer-size));*/
+  border-right: 3px solid lightgrey;
+  overflow: auto;
+  overflow-wrap: anywhere;
+  font-size: 15px;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  /*position: absolute;
+  left: var(--left-menu-size);
+  top: var(--header-footer-size);*/
+  width: calc(100% - var(--right-menu-size) - var(--left-menu-size) - 6px);
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.aside-menu {
+  position: sticky;
+  top: var(--header-footer-size);
+  left: calc(100vw - var(--right-menu-size));
+  width: var(--right-menu-size);
+  /*height: calc(100% - 2 * var(--header-footer-size));*/
+  border-left: 3px solid lightgrey;
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+
+#top {
+  display: block;
+  /*height: var(--header-footer-size);;
+  margin-top: calc(-1*var(--header-footer-size));*/
+  visibility: hidden;
+}
+
+.paragraph-content-position {
+  display: block;
+  height: 2rem;
+  margin-top: -2rem;
+  visibility: hidden;
+}
+
+.paragraph-content {
+  margin: 5px;
+  line-height: 1.46;
+}
+
+.aside-menu > h3,
+.context-menu > h3 {
+  padding-left: 10px;
+}
+.aside-menu > a,
+.context-menu > a {
+  text-decoration: none;
+  color: black;
+  margin: 0px;
+}
+
+.aside-menu > a > p,
+.context-menu > a > p {
+  padding: 10px !important;
+  margin: 0px !important;
+  width: inherit;
+  height: inherit;
+}
+
+.aside-menu > a > p:hover,
+.context-menu > a > p:hover {
+  color: white;
+  background-color: grey;
+}
+
+.page-content > ol {
+  margin: 0px;
+}
+
+.aside-menu > h3 {
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 0px 10px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+  }
+
+  .aside-menu {
+    display: none;
+  }
+  .page-content {
+    padding-top: 25px;
+  }
+}
+
+@media screen and (max-width: 328px) {
+  .page-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .aside-menu {
+    display: none;
+  }
+  .context-menu {
+    display: none;
+  }
+}
