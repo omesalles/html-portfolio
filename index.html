@@ -417,7 +417,21 @@
           <div>
             <span class="paragraph-content-position" id="REST"></span>
             <h2 class="title-paragraph">REST</h2>
-            <section><p class="paragraph-content">four</p></section>
+            <section><p class="paragraph-content">
+              <pre>
+URLs required for a useful API:
+  - A collection
+  - The second is for an element
+You should use nouns to refer to collections 
+Use the params to allow for complexity:
+- including pagination
+- offset/limit
+- search?q
+LinkedIn uses /people:(id, first-name…), Facebook joe.smith/friends?fields=id,name,picture and more ...
+You can also define different formats for what you return, using an extension for hte identifier, for instance /object.json.
+Consider and document the defaults
+</pre>
+              </p></section>
           </div>
           <br /><br />
         </div>
